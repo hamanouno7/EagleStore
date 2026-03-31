@@ -1,0 +1,724 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>EAGLE STORE | Chaussures en Tunisie</title>
+  <meta name="description" content="EAGLE STORE — chaussures premium en Tunisie. Catalogue moderne, filtres rapides et commande directe." />
+  <meta name="theme-color" content="#a1001f" />
+
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Playfair+Display:wght@600;700&display=swap" rel="stylesheet">
+
+  <style>
+:root{
+  --bg:#ffffff;
+  --text:#111217;
+  --muted:#5d606b;
+  --line:rgba(16,18,23,.12);
+  --shadow:0 22px 60px rgba(13,15,24,.12);
+  --shadow-soft:0 14px 30px rgba(13,15,24,.10);
+  --radius:18px;
+  --radius-sm:14px;
+  --red:#a1001f;
+  --red-2:#c3042a;
+  --red-3:#7c0017;
+  --cream:#fff6f7;
+  --focus:rgba(161,0,31,.24);
+  --shell:1180px;
+  --topbar-h:76px;
+}
+
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:Inter,system-ui,-apple-system,Segoe UI,Roboto,Arial,sans-serif;
+  color:var(--text);
+  background:var(--bg);
+  overflow-x:hidden;
+}
+img{display:block;max-width:100%}
+a{color:inherit;text-decoration:none}
+button,input,select{font:inherit}
+::selection{background:rgba(161,0,31,.18)}
+
+.skip-link{
+  position:absolute;left:-999px;top:10px;z-index:9999;
+  background:#fff;border:1px solid var(--line);border-radius:12px;
+  padding:10px 12px;box-shadow:var(--shadow-soft)
+}
+.skip-link:focus{left:10px;outline:2px solid var(--focus)}
+
+.shell{width:min(var(--shell),92%);margin-inline:auto}
+.muted{color:var(--muted)}
+.topbar{position:sticky;top:0;z-index:50;height:var(--topbar-h);background:rgba(255,255,255,.78);backdrop-filter:saturate(160%) blur(12px);border-bottom:1px solid var(--line)}
+.topbar__inner{height:100%;display:flex;align-items:center;justify-content:space-between;gap:14px}
+.brand{display:flex;align-items:center;gap:12px;min-width:0}
+.brand__logo{width:44px;height:44px;border-radius:14px;border:1px solid rgba(161,0,31,.16);box-shadow:0 14px 30px rgba(161,0,31,.14);object-fit:cover}
+.brand__text{display:grid;gap:2px;min-width:0}
+.brand__name{font-weight:900;letter-spacing:.6px;font-family:"Playfair Display",Georgia,serif;text-transform:uppercase}
+.brand__tag{font-size:.82rem;color:var(--muted);white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.nav{display:flex;gap:18px;align-items:center}
+.nav a{font-size:.95rem;color:rgba(17,18,23,.72);padding:10px 10px;border-radius:999px;transition:background .2s ease,color .2s ease,transform .2s ease}
+.nav a:hover{background:rgba(161,0,31,.06);color:var(--red);transform:translateY(-1px)}
+.topbar__actions{display:flex;gap:10px;align-items:center}
+.icon-btn{width:42px;height:42px;border-radius:14px;border:1px solid var(--line);background:#fff;display:grid;place-items:center;cursor:pointer;transition:transform .2s ease,border-color .2s ease,box-shadow .2s ease}
+.icon-btn svg{width:18px;height:18px;color:rgba(17,18,23,.82)}
+.icon-btn:hover{transform:translateY(-1px);border-color:rgba(161,0,31,.22);box-shadow:0 12px 24px rgba(161,0,31,.10)}
+.icon-btn:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+.cart-pill{height:42px;border-radius:999px;border:1px solid rgba(161,0,31,.22);background:linear-gradient(180deg,rgba(161,0,31,.07),rgba(161,0,31,.03));padding:0 12px;display:flex;align-items:center;gap:10px;cursor:pointer;transition:transform .2s ease,box-shadow .2s ease,background .2s ease}
+.cart-pill__label{font-weight:700}
+.cart-pill__count{min-width:22px;height:22px;border-radius:999px;background:var(--red);color:#fff;display:inline-flex;align-items:center;justify-content:center;font-size:.78rem;font-weight:800;padding:0 7px}
+.cart-pill:hover{transform:translateY(-1px);box-shadow:0 16px 28px rgba(161,0,31,.12)}
+.cart-pill:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+.menu-btn{display:none;width:44px;height:42px;border-radius:14px;border:1px solid var(--line);background:#fff;cursor:pointer;padding:0 12px}
+.menu-btn span{display:block;height:2px;background:rgba(17,18,23,.78);border-radius:999px;margin:5px 0}
+.menu-btn:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+.hero{position:relative;padding:38px 0 18px}
+.hero::before{content:"";position:absolute;inset:-200px -120px auto -120px;height:520px;background:radial-gradient(circle at 22% 20%, rgba(161,0,31,.12), transparent 60%),radial-gradient(circle at 78% 26%, rgba(0,0,0,.06), transparent 62%),linear-gradient(90deg, rgba(161,0,31,.03), rgba(161,0,31,.00));pointer-events:none}
+.hero__inner{position:relative;display:grid;grid-template-columns:1.08fr .92fr;gap:26px;align-items:center}
+.hero__kicker{display:flex;gap:10px;align-items:center;margin-bottom:14px}
+.kicker-text{color:rgba(17,18,23,.72);font-weight:600;font-size:.92rem}
+.chip{display:inline-flex;align-items:center;justify-content:center;padding:7px 10px;border-radius:999px;border:1px solid rgba(161,0,31,.22);background:rgba(161,0,31,.06);color:var(--red);font-weight:800;font-size:.76rem;letter-spacing:.4px;text-transform:uppercase}
+.chip--soft{border-color:rgba(16,18,23,.12);background:rgba(16,18,23,.04);color:rgba(17,18,23,.82)}
+.hero__title{font-family:"Playfair Display",Georgia,serif;font-weight:700;font-size:clamp(2.1rem,4.7vw,3.7rem);line-height:1.04;letter-spacing:.2px;margin-bottom:14px}
+.hero__titleAccent{color:var(--red);text-shadow:0 18px 30px rgba(161,0,31,.12)}
+.hero__sub{color:rgba(17,18,23,.72);max-width:62ch;margin-bottom:18px}
+.hero__cta{display:flex;gap:12px;flex-wrap:wrap;margin-bottom:18px}
+.btn{border-radius:14px;padding:12px 16px;border:1px solid transparent;font-weight:800;display:inline-flex;align-items:center;justify-content:center;cursor:pointer;transition:transform .2s ease,box-shadow .2s ease,background .2s ease,border-color .2s ease,color .2s ease}
+.btn:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+.btn--primary{background:linear-gradient(180deg,var(--red-2),var(--red));border-color:rgba(161,0,31,.32);color:#fff;box-shadow:0 18px 34px rgba(161,0,31,.18)}
+.btn--primary:hover{transform:translateY(-2px);box-shadow:0 26px 44px rgba(161,0,31,.22)}
+.btn--ghost{background:#fff;border-color:rgba(161,0,31,.22);color:var(--red)}
+.btn--ghost:hover{transform:translateY(-2px);box-shadow:0 18px 30px rgba(13,15,24,.10)}
+.btn--soft{background:rgba(16,18,23,.04);border-color:rgba(16,18,23,.12);color:rgba(17,18,23,.84)}
+.btn--soft:hover{transform:translateY(-2px);box-shadow:0 18px 30px rgba(13,15,24,.08)}
+.hero__stats{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:10px}
+.stat{border:1px solid rgba(16,18,23,.10);border-radius:16px;background:linear-gradient(180deg,#fff,rgba(161,0,31,.03));padding:12px 12px;box-shadow:0 14px 28px rgba(13,15,24,.06)}
+.stat strong{display:block;font-size:1.06rem}
+.stat span{display:block;color:rgba(17,18,23,.72);font-size:.86rem}
+.stage{border-radius:22px;border:1px solid rgba(161,0,31,.14);background:radial-gradient(circle at 30% 20%, rgba(161,0,31,.12), transparent 55%),linear-gradient(180deg, #fff, rgba(161,0,31,.02));box-shadow:var(--shadow);padding:14px;overflow:hidden}
+.stage__top{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}
+.stage__label{display:inline-flex;align-items:center;gap:10px;padding:9px 12px;border-radius:999px;border:1px solid rgba(161,0,31,.18);background:rgba(161,0,31,.06);font-weight:800;color:rgba(17,18,23,.82)}
+.dot{width:10px;height:10px;border-radius:50%;background:var(--red);box-shadow:0 0 0 6px rgba(161,0,31,.12)}
+.stage__controls{display:flex;gap:8px}
+.stage__btn{width:40px;height:40px;border-radius:14px}
+.stage__frame{position:relative;border-radius:18px;border:1px solid rgba(16,18,23,.10);background:linear-gradient(135deg, #ffffff, #f4f4f7);padding:16px;min-height:320px;display:grid;place-items:center;overflow:hidden}
+.stage__shine{position:absolute;inset:-60px;background:radial-gradient(circle at 50% 30%, rgba(255,255,255,.85), transparent 50%),radial-gradient(circle at 20% 80%, rgba(161,0,31,.10), transparent 52%);transform:rotate(6deg);pointer-events:none}
+.stage__image{width:min(92%,460px);max-height:340px;object-fit:contain;filter:drop-shadow(0 26px 30px rgba(0,0,0,.20));opacity:0;transform:translateY(10px) scale(.98);transition:opacity .55s ease,transform .55s cubic-bezier(.22,.61,.36,1);will-change:opacity,transform}
+.stage__image.is-ready{opacity:1;transform:translateY(0) scale(1)}
+.stage__image.is-switching{opacity:0;transform:translateY(-8px) scale(.98)}
+.stage__rail{display:flex;gap:10px;padding:12px 2px 4px;overflow:auto;scroll-snap-type:x mandatory;scrollbar-width:thin;scrollbar-color:rgba(161,0,31,.5) rgba(0,0,0,.06)}
+.stage__rail::-webkit-scrollbar{height:10px}
+.stage__rail::-webkit-scrollbar-track{background:rgba(0,0,0,.06);border-radius:999px}
+.stage__rail::-webkit-scrollbar-thumb{background:rgba(161,0,31,.45);border-radius:999px}
+.thumb{scroll-snap-align:start;width:68px;height:54px;border-radius:14px;border:1px solid rgba(16,18,23,.12);background:#fff;overflow:hidden;cursor:pointer;transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease;flex:0 0 auto}
+.thumb img{width:100%;height:100%;object-fit:cover}
+.thumb:hover{transform:translateY(-2px);border-color:rgba(161,0,31,.26);box-shadow:0 16px 24px rgba(161,0,31,.10)}
+.thumb.is-active{border-color:rgba(161,0,31,.44);box-shadow:0 0 0 3px rgba(161,0,31,.12)}
+.section{padding:82px 0}
+.section__head{display:flex;align-items:flex-end;justify-content:space-between;gap:16px;margin-bottom:18px;flex-wrap:wrap}
+.section__title{font-family:"Playfair Display",Georgia,serif;font-weight:700;font-size:clamp(1.6rem,2.6vw,2.2rem);letter-spacing:.2px}
+.section__lead{color:rgba(17,18,23,.72);max-width:72ch}
+.collections{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.collection-card{position:relative;border-radius:22px;border:1px solid rgba(161,0,31,.16);background:linear-gradient(180deg,#fff,rgba(161,0,31,.03));box-shadow:var(--shadow-soft);padding:18px;overflow:hidden;min-height:170px}
+.collection-card__bg{position:absolute;inset:-80px -100px auto -100px;height:220px;background:radial-gradient(circle at 30% 40%, rgba(161,0,31,.18), transparent 55%),radial-gradient(circle at 80% 22%, rgba(0,0,0,.06), transparent 55%);transform:rotate(-4deg);pointer-events:none}
+.collection-card h3{position:relative;font-size:1.1rem;margin-bottom:8px}
+.collection-card p{position:relative;color:rgba(17,18,23,.72);margin-bottom:14px}
+.collection-card__link{position:relative;display:inline-flex;padding:10px 12px;border-radius:14px;border:1px solid rgba(161,0,31,.22);color:var(--red);font-weight:800;background:rgba(161,0,31,.05)}
+.collection-card:hover{transform:translateY(-3px);transition:transform .25s ease}
+.toolbar{border-radius:22px;border:1px solid rgba(16,18,23,.10);background:#fff;box-shadow:var(--shadow-soft);padding:14px;display:flex;align-items:end;justify-content:space-between;gap:14px;flex-wrap:wrap}
+.toolbar__left{display:grid;grid-template-columns:1.3fr .75fr 1fr;gap:12px;flex:1;min-width:min(740px,100%)}
+.toolbar__right{display:flex;gap:12px;align-items:center}
+.meta{padding:10px 12px;border-radius:14px;border:1px solid rgba(16,18,23,.10);background:rgba(16,18,23,.03);font-weight:800}
+.input{display:grid;gap:6px}
+.input label{font-size:.82rem;color:rgba(17,18,23,.66);font-weight:700}
+.input input,.input select{height:44px;border-radius:14px;border:1px solid rgba(16,18,23,.12);background:#fff;padding:0 12px;outline:none;transition:border-color .2s ease,box-shadow .2s ease}
+.input input:focus,.input select:focus{border-color:rgba(161,0,31,.34);box-shadow:0 0 0 4px rgba(161,0,31,.12)}
+.input--range{grid-column:span 1}
+.range-head{display:flex;justify-content:space-between;align-items:baseline;gap:10px}
+.range-value{font-size:.82rem;color:rgba(17,18,23,.70);font-weight:800}
+.price-boxes{display:flex;align-items:flex-end;justify-content:space-between;gap:10px;margin-bottom:8px}
+.price-box{flex:1;display:grid;gap:6px}
+.price-box label{font-size:.78rem;color:#7082a5;font-weight:700}
+.price-boxes__sep{color:#a6b1c4;font-weight:700;padding-bottom:13px}
+.price-pill{height:42px;border-radius:999px;border:1px solid #cfd8e6;background:#eceff3;padding:0 12px;display:flex;align-items:center;gap:8px}
+.price-pill__input{width:100%;min-width:0;border:0;background:transparent;outline:none;text-align:right;font-weight:900;color:#0d1426;padding:0;height:auto !important;-moz-appearance:textfield}
+.price-pill__input::-webkit-outer-spin-button,.price-pill__input::-webkit-inner-spin-button{ -webkit-appearance:none; margin:0; }
+.price-pill__suffix{font-size:.92rem;font-weight:800;color:#0d1426;flex-shrink:0}
+.range{position:relative;height:22px;border-radius:14px;background:transparent;overflow:visible}
+.range input{position:absolute;inset:0;width:100%;background:transparent;pointer-events:none;-webkit-appearance:none;appearance:none}
+.range input::-webkit-slider-thumb{-webkit-appearance:none;appearance:none;width:16px;height:16px;border-radius:50%;background:#fff;border:2px solid rgba(161,0,31,.65);box-shadow:0 10px 16px rgba(161,0,31,.14);pointer-events:auto;cursor:grab;margin-top:-6px}
+.range input::-moz-range-thumb{width:16px;height:16px;border-radius:50%;background:#fff;border:2px solid rgba(161,0,31,.65);box-shadow:0 10px 16px rgba(161,0,31,.14);pointer-events:auto;cursor:grab}
+.range input::-webkit-slider-runnable-track{height:4px;background:transparent}
+.range input::-moz-range-track{height:4px;background:transparent}
+.range__track{position:absolute;left:8px;right:8px;top:50%;transform:translateY(-50%);height:4px;border-radius:999px;background:rgba(161,0,31,.20)}
+.range__active{position:absolute;top:50%;transform:translateY(-50%);height:4px;border-radius:999px;background:linear-gradient(90deg,var(--red-3),var(--red-2));left:0;width:0;margin-left:8px}
+.sizes{margin-top:14px;display:flex;gap:10px;flex-wrap:wrap}
+.size-chip{padding:9px 12px;border-radius:999px;border:1px solid rgba(16,18,23,.12);background:#fff;cursor:pointer;transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease,background .18s ease,color .18s ease;font-weight:800;font-size:.86rem;color:rgba(17,18,23,.86)}
+.size-chip:hover{transform:translateY(-2px);box-shadow:0 14px 24px rgba(13,15,24,.08)}
+.size-chip.is-on{background:rgba(161,0,31,.08);border-color:rgba(161,0,31,.28);color:var(--red)}
+.grid-wrap{margin-top:18px;position:relative}
+.loader{width:50px;height:50px;border-radius:50%;border:3px solid rgba(16,18,23,.12);border-top-color:rgba(161,0,31,.75);animation:spin 1s linear infinite;margin:28px auto}
+@keyframes spin{to{transform:rotate(360deg)}}
+.empty{border-radius:22px;border:1px dashed rgba(161,0,31,.32);background:rgba(161,0,31,.03);padding:22px;color:rgba(17,18,23,.72);text-align:center}
+.grid{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:14px}
+.card{border-radius:22px;overflow:hidden;border:1px solid rgba(161,0,31,.18);background:radial-gradient(circle at 16% 10%, rgba(255,255,255,.78), transparent 52%),linear-gradient(180deg, rgba(161,0,31,.92), rgba(161,0,31,.84));color:#fff;box-shadow:0 18px 44px rgba(161,0,31,.14);transform:translateY(0);transition:transform .25s ease,box-shadow .25s ease;display:flex;flex-direction:column;min-height:100%}
+.card:hover{transform:translateY(-6px);box-shadow:0 24px 60px rgba(161,0,31,.20)}
+.card__media{position:relative;aspect-ratio: 4/3;background:rgba(255,255,255,.10);border-bottom:1px solid rgba(255,255,255,.14);display:grid;place-items:center}
+.card__media img{width:100%;height:100%;object-fit:cover;filter:saturate(1.02) contrast(1.02);transform:scale(1.02);transition:transform .35s ease,opacity .35s ease}
+.card:hover .card__media img{transform:scale(1.06)}
+.badge{position:absolute;top:12px;right:12px;background:rgba(255,255,255,.92);color:var(--red);font-weight:900;font-size:.76rem;padding:7px 10px;border-radius:999px;box-shadow:0 16px 30px rgba(0,0,0,.14);max-width:70%;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.card__body{padding:14px 14px 16px;display:grid;gap:10px;flex:1}
+.card__cat{font-size:.74rem;letter-spacing:.8px;text-transform:uppercase;opacity:.9}
+.card__name{font-weight:900;font-size:1.02rem;line-height:1.28}
+.card__row{display:flex;align-items:baseline;justify-content:space-between;gap:10px}
+.card__price{font-weight:900;font-size:1.06rem}
+.card__old{opacity:.72;text-decoration:line-through;font-weight:700;font-size:.86rem}
+.card__sizes{opacity:.88;font-size:.86rem}
+.card__actions{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-top:auto}
+.mini-btn{height:44px;border-radius:14px;border:1px solid rgba(255,255,255,.26);background:rgba(255,255,255,.10);color:#fff;font-weight:900;cursor:pointer;transition:transform .2s ease,background .2s ease,border-color .2s ease}
+.mini-btn:hover{transform:translateY(-2px);background:rgba(255,255,255,.16);border-color:rgba(255,255,255,.40)}
+.mini-btn--solid{background:rgba(255,255,255,.92);color:var(--red);border-color:rgba(255,255,255,.92)}
+.mini-btn--solid:hover{background:#fff}
+.mini-btn:disabled{opacity:.55;cursor:not-allowed;transform:none}
+.story{display:grid;grid-template-columns:1.2fr .8fr;gap:16px;align-items:stretch}
+.story__panel{border-radius:22px;border:1px solid rgba(16,18,23,.10);background:#fff;box-shadow:var(--shadow-soft);padding:18px}
+.bullets{display:grid;gap:12px;margin-top:14px}
+.bullet{display:flex;gap:12px;align-items:flex-start}
+.bullet__icon{width:34px;height:34px;border-radius:14px;display:grid;place-items:center;background:rgba(161,0,31,.08);border:1px solid rgba(161,0,31,.20);color:var(--red);font-weight:900}
+.bullet p{color:rgba(17,18,23,.72);margin-top:4px}
+.story__accent{position:relative;border-radius:22px;overflow:hidden;border:1px solid rgba(161,0,31,.14)}
+.accent-card{position:absolute;inset:-40px;background:radial-gradient(circle at 22% 20%, rgba(161,0,31,.24), transparent 55%),radial-gradient(circle at 70% 60%, rgba(0,0,0,.08), transparent 60%),linear-gradient(135deg, rgba(161,0,31,.05), rgba(161,0,31,.00));transform:rotate(-7deg)}
+.accent-card--thin{inset:-60px;opacity:.55;transform:rotate(11deg)}
+.contact{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;align-items:stretch}
+.contact-card{border-radius:22px;border:1px solid rgba(161,0,31,.18);background:linear-gradient(180deg, rgba(161,0,31,.92), rgba(161,0,31,.84));color:#fff;box-shadow:0 18px 44px rgba(161,0,31,.14);padding:16px;display:flex;align-items:center;gap:14px;transition:transform .25s ease,box-shadow .25s ease}
+.contact-card:hover{transform:translateY(-4px);box-shadow:0 24px 60px rgba(161,0,31,.20)}
+.contact-card__icon{width:44px;height:44px;border-radius:16px;display:grid;place-items:center;background:rgba(255,255,255,.92);color:var(--red);font-weight:900;border:1px solid rgba(255,255,255,.92)}
+.contact-card p{opacity:.9}
+.contact-card__arrow{margin-left:auto;font-weight:900;font-size:1.2rem}
+.contact-note{grid-column:1 / -1;border-radius:22px;border:1px solid rgba(16,18,23,.10);background:#fff;padding:16px;box-shadow:var(--shadow-soft);color:rgba(17,18,23,.72)}
+.footer{border-top:1px solid var(--line);padding:20px 0}
+.footer__inner{display:flex;align-items:center;justify-content:space-between;gap:12px;flex-wrap:wrap}
+.footer__left{display:flex;align-items:center;gap:12px}
+.footer__logo{width:38px;height:38px;border-radius:14px;border:1px solid rgba(161,0,31,.16)}
+.footer__muted{color:rgba(17,18,23,.66);font-size:.9rem}
+.footer__right a{color:rgba(17,18,23,.74);font-weight:800}
+.footer__right a:hover{color:var(--red)}
+.backdrop{position:fixed;inset:0;background:rgba(10,10,12,.42);backdrop-filter:blur(8px);z-index:60}
+.drawer{position:fixed;top:0;right:0;height:100vh;width:min(92vw,360px);background:#fff;border-left:1px solid rgba(16,18,23,.10);z-index:70;transform:translateX(102%);transition:transform .28s ease;display:flex;flex-direction:column}
+.drawer.is-open{transform:translateX(0)}
+.drawer__head{height:68px;padding:0 14px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(16,18,23,.10)}
+.drawer__body{padding:14px;display:grid;gap:10px}
+.drawer__link{padding:12px 12px;border-radius:16px;border:1px solid rgba(16,18,23,.10);background:rgba(16,18,23,.03);font-weight:900}
+.drawer__link:hover{border-color:rgba(161,0,31,.22);color:var(--red)}
+.drawer__divider{height:1px;background:rgba(16,18,23,.08);margin:6px 0}
+.drawer__cta{padding:12px 12px;border-radius:16px;background:linear-gradient(180deg,var(--red-2),var(--red));color:#fff;font-weight:900}
+.cart{position:fixed;top:0;right:0;height:100vh;width:min(92vw,420px);background:#fff;border-left:1px solid rgba(16,18,23,.10);z-index:80;transform:translateX(102%);transition:transform .28s ease;display:flex;flex-direction:column}
+.cart.is-open{transform:translateX(0)}
+.cart__head{height:68px;padding:0 14px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(16,18,23,.10)}
+.cart__body{padding:14px;overflow:auto;display:grid;gap:10px;flex:1}
+.cart__foot{border-top:1px solid rgba(16,18,23,.10);padding:14px;display:grid;gap:10px}
+.cart__total{display:flex;align-items:center;justify-content:space-between}
+.cart__cta{width:100%}
+.cart-item{display:grid;grid-template-columns:64px 1fr auto;gap:10px;align-items:center;border:1px solid rgba(16,18,23,.10);border-radius:18px;padding:10px;background:rgba(16,18,23,.03)}
+.cart-item img{width:64px;height:64px;border-radius:16px;object-fit:cover}
+.cart-item h4{font-size:.95rem;line-height:1.2;margin-bottom:2px}
+.cart-item .price{color:var(--red);font-weight:900}
+.cart-item .meta{padding:0;border:0;background:transparent;font-weight:700;color:rgba(17,18,23,.68)}
+.remove{border-radius:14px;border:1px solid rgba(161,0,31,.22);background:#fff;color:var(--red);font-weight:900;padding:10px 10px;cursor:pointer}
+.remove:hover{background:rgba(161,0,31,.06)}
+.modal{position:fixed;inset:0;z-index:90;display:grid;place-items:center;padding:18px;background:rgba(10,10,12,.55);backdrop-filter:blur(10px);opacity:0;visibility:hidden;transition:opacity .18s ease,visibility .18s ease}
+.modal.is-open{opacity:1;visibility:visible}
+.modal__card{width:min(96vw,560px);background:#fff;border-radius:22px;border:1px solid rgba(16,18,23,.10);box-shadow:0 28px 70px rgba(0,0,0,.30);overflow:hidden;transform:translateY(10px) scale(.98);transition:transform .18s ease}
+.modal.is-open .modal__card{transform:translateY(0) scale(1)}
+.modal__card--wide{width:min(96vw,980px)}
+.modal__head{height:64px;padding:0 14px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid rgba(16,18,23,.10)}
+.modal__body{padding:14px}
+.modal__input{margin-top:10px;width:100%;height:48px;border-radius:16px;border:1px solid rgba(16,18,23,.12);padding:0 14px;outline:none}
+.modal__input:focus{border-color:rgba(161,0,31,.34);box-shadow:0 0 0 4px rgba(161,0,31,.12)}
+.modal__actions{display:flex;gap:10px;flex-wrap:wrap;margin-top:12px}
+.qv{display:grid;grid-template-columns:1.2fr .8fr;min-height:0}
+.qv__gallery{padding:14px;border-right:1px solid rgba(16,18,23,.10);display:grid;gap:10px}
+.qv__main{border-radius:18px;border:1px solid rgba(16,18,23,.10);background:linear-gradient(135deg,#fff,#f4f4f7);overflow:hidden;min-height:320px;display:grid;place-items:center}
+.qv__main img{width:100%;height:100%;object-fit:contain;background:#fff}
+.qv__thumbs{display:flex;gap:10px;flex-wrap:wrap}
+.qv-thumb{width:64px;height:54px;border-radius:14px;border:1px solid rgba(16,18,23,.12);overflow:hidden;background:#fff;cursor:pointer;transition:transform .18s ease,border-color .18s ease,box-shadow .18s ease}
+.qv-thumb img{width:100%;height:100%;object-fit:cover}
+.qv-thumb:hover{transform:translateY(-2px);box-shadow:0 14px 24px rgba(13,15,24,.08)}
+.qv-thumb.is-active{border-color:rgba(161,0,31,.44);box-shadow:0 0 0 3px rgba(161,0,31,.12)}
+.qv__info{padding:14px;overflow:auto}
+.qv__meta{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px;flex-wrap:wrap}
+.qv__price{font-weight:900;color:var(--red);font-size:1.2rem}
+.qv__desc{white-space:pre-wrap}
+.qv__group{margin-top:14px}
+.qv__label{font-weight:900;margin-bottom:8px}
+.swatches{display:flex;gap:10px;flex-wrap:wrap}
+.swatch{width:28px;height:28px;border-radius:999px;border:2px solid #fff;outline:1px solid rgba(16,18,23,.14);cursor:pointer;transition:transform .18s ease,outline-color .18s ease}
+.swatch.is-on{outline:2px solid rgba(161,0,31,.55);transform:scale(1.06)}
+.chips{display:flex;gap:10px;flex-wrap:wrap}
+.chip-btn{padding:9px 12px;border-radius:999px;border:1px solid rgba(16,18,23,.12);background:#fff;cursor:pointer;font-weight:900}
+.chip-btn.is-on{border-color:rgba(161,0,31,.30);background:rgba(161,0,31,.06);color:var(--red)}
+.qv__summary{margin-top:12px;border-radius:18px;border:1px solid rgba(16,18,23,.10);background:rgba(16,18,23,.03);padding:12px;font-weight:800;color:rgba(17,18,23,.72)}
+[data-reveal]{opacity:0;transform:translateY(16px);transition:opacity .7s ease,transform .7s cubic-bezier(.22,.61,.36,1)}
+[data-reveal].is-in{opacity:1;transform:translateY(0)}
+@media (max-width: 1024px){.hero__inner{grid-template-columns:1fr;gap:16px}.grid{grid-template-columns:repeat(3,minmax(0,1fr))}.collections{grid-template-columns:1fr}.story{grid-template-columns:1fr}.qv{grid-template-columns:1fr}.qv__gallery{border-right:0;border-bottom:1px solid rgba(16,18,23,.10)}}
+@media (max-width: 820px){:root{--topbar-h:68px}.nav{display:none}.menu-btn{display:block}.toolbar__left{grid-template-columns:1fr;min-width:0}.grid{grid-template-columns:repeat(2,minmax(0,1fr))}.contact{grid-template-columns:1fr}}
+@media (max-width: 520px){.grid{grid-template-columns:1fr}.hero__stats{grid-template-columns:1fr}.cart-pill__label{display:none}}
+@media (prefers-reduced-motion: reduce){html{scroll-behavior:auto}*,*::before,*::after{animation:none!important;transition:none!important}}
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">Aller au contenu</a>
+
+  <header class="topbar" id="top">
+    <div class="shell topbar__inner">
+      <a class="brand" href="#top" aria-label="EAGLE STORE - Accueil">
+        <img class="brand__logo" src="./assets/logo.png" alt="Logo EAGLE STORE" />
+        <div class="brand__text">
+          <span class="brand__name">EAGLE STORE</span>
+          <span class="brand__tag">Chaussures • Tunisie</span>
+        </div>
+      </a>
+
+      <nav class="nav" aria-label="Navigation principale">
+        <a href="#collections">Collections</a>
+        <a href="#catalogue">Catalogue</a>
+        <a href="#story">À propos</a>
+        <a href="#contact">Contact</a>
+      </nav>
+
+      <div class="topbar__actions">
+        <button class="icon-btn" id="openSearch" type="button" aria-label="Ouvrir la recherche">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M10 2a8 8 0 1 1 5.293 13.707l4 4a1 1 0 0 1-1.414 1.414l-4-4A8 8 0 0 1 10 2Zm0 2a6 6 0 1 0 0 12 6 6 0 0 0 0-12Z"/></svg>
+        </button>
+        <button class="cart-pill" id="openCart" type="button" aria-label="Ouvrir le panier">
+          <span class="cart-pill__label">Panier</span>
+          <span class="cart-pill__count" id="cartCount">0</span>
+        </button>
+        <button class="menu-btn" id="openMenu" type="button" aria-label="Ouvrir le menu">
+          <span></span><span></span><span></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <aside class="drawer" id="menuDrawer" aria-label="Menu" aria-hidden="true">
+    <div class="drawer__head">
+      <strong>Menu</strong>
+      <button class="icon-btn" id="closeMenu" type="button" aria-label="Fermer le menu">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M18.3 5.7a1 1 0 0 1 0 1.4L13.4 12l4.9 4.9a1 1 0 1 1-1.4 1.4L12 13.4l-4.9 4.9a1 1 0 1 1-1.4-1.4l4.9-4.9-4.9-4.9a1 1 0 0 1 1.4-1.4l4.9 4.9 4.9-4.9a1 1 0 0 1 1.4 0Z"/></svg>
+      </button>
+    </div>
+    <div class="drawer__body">
+      <a href="#collections" class="drawer__link" data-close-drawer>Collections</a>
+      <a href="#catalogue" class="drawer__link" data-close-drawer>Catalogue</a>
+      <a href="#story" class="drawer__link" data-close-drawer>À propos</a>
+      <a href="#contact" class="drawer__link" data-close-drawer>Contact</a>
+      <div class="drawer__divider"></div>
+      <a href="#catalogue" class="drawer__cta" data-close-drawer>Voir les produits</a>
+    </div>
+  </aside>
+  <div class="backdrop" id="backdrop" hidden></div>
+
+  <main id="main">
+    <section class="hero">
+      <div class="shell hero__inner">
+        <div class="hero__copy" data-reveal>
+          <div class="hero__kicker">
+            <span class="chip">Nouveau</span>
+            <span class="kicker-text">Collection 2026 • Livraison Tunisie</span>
+          </div>
+          <h1 class="hero__title">
+            Des chaussures qui
+            <span class="hero__titleAccent">marquent</span>
+            le style.
+          </h1>
+          <p class="hero__sub">
+            Catalogue clair, expérience fluide, commande directe. EAGLE STORE propose des modèles premium
+            pour tous les looks — du casual au street.
+          </p>
+          <div class="hero__cta">
+            <a class="btn btn--primary" href="#catalogue">Explorer le catalogue</a>
+            <a class="btn btn--ghost" href="#story">Découvrir la marque</a>
+          </div>
+
+          <div class="hero__stats" aria-label="Statistiques">
+            <div class="stat">
+              <strong id="statProducts">0+</strong>
+              <span>modèles</span>
+            </div>
+            <div class="stat">
+              <strong>Qualité</strong>
+              <span>sélectionnée</span>
+            </div>
+            <div class="stat">
+              <strong>Support</strong>
+              <span>réactif</span>
+            </div>
+          </div>
+        </div>
+
+        <div class="hero__stage" aria-label="Produits vedettes" data-reveal>
+          <div class="stage">
+            <div class="stage__top">
+              <div class="stage__label">
+                <span class="dot"></span>
+                <span>Vedette</span>
+              </div>
+              <div class="stage__controls">
+                <button class="icon-btn stage__btn" id="heroPrev" type="button" aria-label="Image précédente">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M15.7 5.7a1 1 0 0 1 0 1.4L10.8 12l4.9 4.9a1 1 0 1 1-1.4 1.4l-5.6-5.6a1 1 0 0 1 0-1.4l5.6-5.6a1 1 0 0 1 1.4 0Z"/></svg>
+                </button>
+                <button class="icon-btn stage__btn" id="heroNext" type="button" aria-label="Image suivante">
+                  <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M8.3 18.3a1 1 0 0 1 0-1.4l4.9-4.9-4.9-4.9a1 1 0 1 1 1.4-1.4l5.6 5.6a1 1 0 0 1 0 1.4l-5.6 5.6a1 1 0 0 1-1.4 0Z"/></svg>
+                </button>
+              </div>
+            </div>
+
+            <div class="stage__frame">
+              <div class="stage__shine" aria-hidden="true"></div>
+              <img class="stage__image" id="heroImage" src="./assets/logo.png" alt="Produit vedette" loading="lazy" />
+            </div>
+
+            <div class="stage__rail" id="heroRail" aria-label="Miniatures vedettes"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="shell section" id="collections">
+      <div class="section__head" data-reveal>
+        <h2 class="section__title">Collections</h2>
+        <p class="section__lead">Une mise en scène luxe: blanc + rouge profond, finitions premium et animations douces.</p>
+      </div>
+
+      <div class="collections" data-reveal>
+        <article class="collection-card">
+          <div class="collection-card__bg"></div>
+          <h3>Street Premium</h3>
+          <p>Des silhouettes fortes pour un look moderne.</p>
+          <a class="collection-card__link" href="#catalogue" aria-label="Voir Street Premium">Voir</a>
+        </article>
+        <article class="collection-card">
+          <div class="collection-card__bg"></div>
+          <h3>Casual Classy</h3>
+          <p>Confort au quotidien, finition élégante.</p>
+          <a class="collection-card__link" href="#catalogue" aria-label="Voir Casual Classy">Voir</a>
+        </article>
+        <article class="collection-card">
+          <div class="collection-card__bg"></div>
+          <h3>Sport & Move</h3>
+          <p>Polyvalence, stabilité et style.</p>
+          <a class="collection-card__link" href="#catalogue" aria-label="Voir Sport & Move">Voir</a>
+        </article>
+      </div>
+    </section>
+
+    <section class="shell section" id="catalogue" aria-label="Catalogue">
+      <div class="section__head" data-reveal>
+        <h2 class="section__title">Catalogue</h2>
+        <p class="section__lead">Filtrez vite, visualisez en grand, ajoutez au panier, puis commandez.</p>
+      </div>
+
+      <div class="toolbar" data-reveal>
+        <div class="toolbar__left">
+          <div class="input">
+            <label for="q">Recherche</label>
+            <input id="q" type="search" placeholder="Nom du produit..." autocomplete="off" />
+          </div>
+          <div class="input">
+            <label for="cat">Catégorie</label>
+            <select id="cat">
+              <option value="all">Toutes</option>
+            </select>
+          </div>
+          <div class="input input--range">
+            <div class="range-head">
+              <label>Fourchette de prix</label>
+            </div>
+            <div class="price-boxes">
+              <div class="price-box">
+                <label for="priceInputMin">Min</label>
+                <div class="price-pill">
+                  <input id="priceInputMin" class="price-pill__input" type="number" min="0" step="1" value="0" inputmode="numeric" />
+                  <span class="price-pill__suffix">DNT</span>
+                </div>
+              </div>
+              <span class="price-boxes__sep" aria-hidden="true">—</span>
+              <div class="price-box">
+                <label for="priceInputMax">Max</label>
+                <div class="price-pill">
+                  <input id="priceInputMax" class="price-pill__input" type="number" min="0" step="1" value="0" inputmode="numeric" />
+                  <span class="price-pill__suffix">DNT</span>
+                </div>
+              </div>
+            </div>
+            <div class="range">
+              <input id="pMin" type="range" min="0" max="1000" value="0" step="1" />
+              <input id="pMax" type="range" min="0" max="1000" value="1000" step="1" />
+              <div class="range__track" aria-hidden="true"></div>
+              <div class="range__active" id="rangeActive" aria-hidden="true"></div>
+            </div>
+          </div>
+        </div>
+
+        <div class="toolbar__right">
+          <button class="btn btn--soft" id="reset" type="button">Réinitialiser</button>
+          <div class="meta">
+            <span id="count">0 produit</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="sizes" id="sizes" data-reveal aria-label="Filtre tailles"></div>
+
+      <div class="grid-wrap" aria-live="polite">
+        <div class="loader" id="loader" aria-label="Chargement" hidden></div>
+        <div class="grid" id="grid"></div>
+        <div class="empty" id="empty" hidden>Aucun produit ne correspond à vos filtres.</div>
+      </div>
+    </section>
+
+    <section class="shell section" id="story">
+      <div class="story" data-reveal>
+        <div class="story__panel">
+          <h2 class="section__title">EAGLE STORE</h2>
+          <p class="section__lead">
+            Une marque tunisienne pensée pour offrir une expérience pro: navigation rapide, informations claires,
+            et commande simple via WhatsApp / téléphone.
+          </p>
+          <div class="bullets">
+            <div class="bullet">
+              <span class="bullet__icon" aria-hidden="true">◆</span>
+              <div>
+                <strong>Qualité</strong>
+                <p>Finitions soignées et sélection premium.</p>
+              </div>
+            </div>
+            <div class="bullet">
+              <span class="bullet__icon" aria-hidden="true">◆</span>
+              <div>
+                <strong>Rapidité</strong>
+                <p>Filtres instantanés, aperçu complet et panier.</p>
+              </div>
+            </div>
+            <div class="bullet">
+              <span class="bullet__icon" aria-hidden="true">◆</span>
+              <div>
+                <strong>Commande directe</strong>
+                <p>Message pré-rempli pour commander en 1 minute.</p>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div class="story__accent" aria-hidden="true">
+          <div class="accent-card"></div>
+          <div class="accent-card accent-card--thin"></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="shell section" id="contact">
+      <div class="section__head" data-reveal>
+        <h2 class="section__title">Contact</h2>
+        <p class="section__lead">Après avoir choisi vos articles, finalisez la commande ici.</p>
+      </div>
+
+      <div class="contact" data-reveal>
+        <a class="contact-card" id="waLink" href="#" target="_blank" rel="noopener noreferrer">
+          <span class="contact-card__icon" aria-hidden="true">WA</span>
+          <div>
+            <strong>WhatsApp</strong>
+            <p>Commande rapide</p>
+          </div>
+          <span class="contact-card__arrow" aria-hidden="true">→</span>
+        </a>
+        <a class="contact-card" id="callLink" href="#">
+          <span class="contact-card__icon" aria-hidden="true">TEL</span>
+          <div>
+            <strong>Téléphone</strong>
+            <p>Appel direct</p>
+          </div>
+          <span class="contact-card__arrow" aria-hidden="true">→</span>
+        </a>
+        <div class="contact-note">
+          <p><strong>Astuce</strong>: ouvrez le panier et cliquez sur “Commander” pour envoyer un message complet (articles + tailles + total).</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="shell footer__inner">
+      <div class="footer__left">
+        <img src="./assets/logo.png" alt="" class="footer__logo" />
+        <div>
+          <strong>EAGLE STORE</strong>
+          <div class="footer__muted">© <span id="year"></span> • Tous droits réservés</div>
+        </div>
+      </div>
+      <div class="footer__right">
+        <a href="#top">Haut de page</a>
+      </div>
+    </div>
+  </footer>
+
+  <!-- Search modal -->
+  <section class="modal" id="searchModal" aria-label="Recherche" aria-hidden="true">
+    <div class="modal__card" role="dialog" aria-modal="true" aria-labelledby="searchTitle">
+      <div class="modal__head">
+        <strong id="searchTitle">Recherche</strong>
+        <button class="icon-btn" id="closeSearch" type="button" aria-label="Fermer la recherche">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M18.3 5.7a1 1 0 0 1 0 1.4L13.4 12l4.9 4.9a1 1 0 1 1-1.4 1.4L12 13.4l-4.9 4.9a1 1 0 1 1-1.4-1.4l4.9-4.9-4.9-4.9a1 1 0 0 1 1.4-1.4l4.9 4.9 4.9-4.9a1 1 0 0 1 1.4 0Z"/></svg>
+        </button>
+      </div>
+      <div class="modal__body">
+        <p class="muted">Tapez votre recherche, on synchronise avec le catalogue.</p>
+        <input class="modal__input" id="searchModalInput" type="search" placeholder="Ex: Runner, Casual..." />
+        <div class="modal__actions">
+          <button class="btn btn--primary" id="focusCatalogue" type="button">Aller au catalogue</button>
+          <button class="btn btn--soft" id="clearSearch" type="button">Effacer</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Cart drawer -->
+  <aside class="cart" id="cart" aria-label="Panier" aria-hidden="true">
+    <div class="cart__head">
+      <strong>Votre panier</strong>
+      <button class="icon-btn" id="closeCart" type="button" aria-label="Fermer le panier">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M18.3 5.7a1 1 0 0 1 0 1.4L13.4 12l4.9 4.9a1 1 0 1 1-1.4 1.4L12 13.4l-4.9 4.9a1 1 0 1 1-1.4-1.4l4.9-4.9-4.9-4.9a1 1 0 0 1 1.4-1.4l4.9 4.9 4.9-4.9a1 1 0 0 1 1.4 0Z"/></svg>
+      </button>
+    </div>
+    <div class="cart__body" id="cartItems"></div>
+    <div class="cart__foot">
+      <div class="cart__total">
+        <span>Total</span>
+        <strong id="cartTotal">0 DNT</strong>
+      </div>
+      <button class="btn btn--primary cart__cta" id="checkoutWA" type="button">Commander sur WhatsApp</button>
+      <button class="btn btn--soft cart__cta" id="checkoutCall" type="button">Commander par téléphone</button>
+    </div>
+  </aside>
+
+  <!-- Quick view modal -->
+  <section class="modal" id="quickView" aria-label="Aperçu produit" aria-hidden="true">
+    <div class="modal__card modal__card--wide" role="dialog" aria-modal="true" aria-labelledby="qvTitle">
+      <div class="modal__head">
+        <strong id="qvTitle">Produit</strong>
+        <button class="icon-btn" id="closeQV" type="button" aria-label="Fermer l aperçu">
+          <svg viewBox="0 0 24 24" aria-hidden="true"><path fill="currentColor" d="M18.3 5.7a1 1 0 0 1 0 1.4L13.4 12l4.9 4.9a1 1 0 1 1-1.4 1.4L12 13.4l-4.9 4.9a1 1 0 1 1-1.4-1.4l4.9-4.9-4.9-4.9a1 1 0 0 1 1.4-1.4l4.9 4.9 4.9-4.9a1 1 0 0 1 1.4 0Z"/></svg>
+        </button>
+      </div>
+      <div class="qv">
+        <div class="qv__gallery">
+          <div class="qv__main">
+            <img id="qvMain" src="" alt="Image produit" />
+          </div>
+          <div class="qv__thumbs" id="qvThumbs"></div>
+        </div>
+        <div class="qv__info">
+          <div class="qv__meta">
+            <span class="chip chip--soft" id="qvCategory">Catégorie</span>
+            <span class="qv__price" id="qvPrice">0 DNT</span>
+          </div>
+          <p class="muted qv__desc" id="qvDesc"></p>
+
+          <div class="qv__group">
+            <div class="qv__label">Couleurs</div>
+            <div class="swatches" id="qvColors"></div>
+          </div>
+
+          <div class="qv__group">
+            <div class="qv__label">Tailles</div>
+            <div class="chips" id="qvSizes"></div>
+          </div>
+
+          <div class="qv__summary" id="qvSummary">Sélectionnez une taille</div>
+          <button class="btn btn--primary" id="qvAdd" type="button" disabled>Ajouter au panier</button>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <script type="module">
+import { initializeApp } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-app.js";
+import { getAnalytics, isSupported as analyticsSupported } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-analytics.js";
+import { getFirestore, collection, getDocs } from "https://www.gstatic.com/firebasejs/9.23.0/firebase-firestore.js";
+
+const firebaseConfig = {
+  apiKey: "AIzaSyBL1W2fE8qPOU6UWZrEymRkV0bpTvAXCbU",
+  authDomain: "eagle-store-f7b47.firebaseapp.com",
+  projectId: "eagle-store-f7b47",
+  storageBucket: "eagle-store-f7b47.firebasestorage.app",
+  messagingSenderId: "206010344511",
+  appId: "1:206010344511:web:f69f6ed31fcdb0555b048a",
+  measurementId: "G-1GH7W52Y77",
+};
+const app = initializeApp(firebaseConfig);
+analyticsSupported().then((ok) => { if (ok) getAnalytics(app); }).catch(() => {});
+const db = getFirestore(app);
+const WHATSAPP_NUMBER = "21600000000";
+const PHONE_NUMBER = "+21600000000";
+const PRODUCTS_COLLECTION_CANDIDATES = ["products", "product", "items", "shoes", "catalog"];
+
+const $ = (id) => document.getElementById(id);
+const fmt = (n) => `${Math.round(Number(n) || 0)} DNT`;
+const escapeHtml = (str) => String(str ?? "").replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;").replace(/"/g, "&quot;").replace(/'/g, "&#39;");
+const extractDiscountRate = (value) => { const raw = String(value || "").trim(); const match = raw.match(/^-?\s*(\d+(?:[.,]\d+)?)\s*%$/); if (!match) return 0; const rate = Number(match[1].replace(",", ".")); if (!Number.isFinite(rate) || rate <= 0 || rate >= 100) return 0; return rate; };
+const yearEl = $("year"), statProductsEl = $("statProducts"), openMenuBtn = $("openMenu"), closeMenuBtn = $("closeMenu"), menuDrawer = $("menuDrawer"), backdrop = $("backdrop"), openCartBtn = $("openCart"), closeCartBtn = $("closeCart"), cart = $("cart"), cartCount = $("cartCount"), cartItems = $("cartItems"), cartTotal = $("cartTotal"), checkoutWA = $("checkoutWA"), checkoutCall = $("checkoutCall"), openSearchBtn = $("openSearch"), searchModal = $("searchModal"), closeSearchBtn = $("closeSearch"), searchModalInput = $("searchModalInput"), focusCatalogueBtn = $("focusCatalogue"), clearSearchBtn = $("clearSearch"), qInput = $("q"), catSelect = $("cat"), pMin = $("pMin"), pMax = $("pMax"), priceInputMin = $("priceInputMin"), priceInputMax = $("priceInputMax"), priceLabel = $("priceLabel"), rangeActive = $("rangeActive"), resetBtn = $("reset"), countEl = $("count"), sizesWrap = $("sizes"), grid = $("grid"), loader = $("loader"), empty = $("empty"), heroImage = $("heroImage"), heroRail = $("heroRail"), heroPrev = $("heroPrev"), heroNext = $("heroNext"), qv = $("quickView"), closeQV = $("closeQV"), qvTitle = $("qvTitle"), qvMain = $("qvMain"), qvThumbs = $("qvThumbs"), qvCategory = $("qvCategory"), qvPrice = $("qvPrice"), qvDesc = $("qvDesc"), qvColors = $("qvColors"), qvSizes = $("qvSizes"), qvSummary = $("qvSummary"), qvAdd = $("qvAdd"), waLink = $("waLink"), callLink = $("callLink");
+let allProducts = [], filteredProducts = [], sizeFilter = new Set(), heroImages = [], heroIndex = 0, heroTimer = null, qvProduct = null, qvSelectedSize = "", qvSelectedColorId = "", qvImages = [], qvActiveImage = "";
+const cartState = [];
+const NAMED_COLORS = { black: "#111111", white: "#ffffff", red: "#d90429", blue: "#1d4ed8", green: "#16a34a", yellow: "#facc15", orange: "#f97316", purple: "#7c3aed", pink: "#ec4899", grey: "#6b7280", gray: "#6b7280", brown: "#92400e", beige: "#d6bfa2", navy: "#1e3a8a", silver: "#9ca3af", gold: "#d4af37" };
+const colorToCss = (color) => { const rawHex = String(color?.hex || "").trim(); if (/^#([0-9a-f]{3}|[0-9a-f]{6})$/i.test(rawHex)) return rawHex; const name = String(color?.name || "").trim().toLowerCase(); return NAMED_COLORS[name] || "#d1d5db"; };
+function openLayer(layerEl){ layerEl.classList.add("is-open"); layerEl.setAttribute("aria-hidden","false"); backdrop.hidden = false; document.body.style.overflow = "hidden"; }
+function closeLayer(layerEl){ layerEl.classList.remove("is-open"); layerEl.setAttribute("aria-hidden","true"); const anyOpen = menuDrawer.classList.contains("is-open") || cart.classList.contains("is-open") || searchModal.classList.contains("is-open") || qv.classList.contains("is-open"); if(!anyOpen){ backdrop.hidden = true; document.body.style.overflow = ""; } }
+function openModal(modalEl){ modalEl.classList.add("is-open"); modalEl.setAttribute("aria-hidden","false"); backdrop.hidden = false; document.body.style.overflow = "hidden"; }
+function closeModal(modalEl){ modalEl.classList.remove("is-open"); modalEl.setAttribute("aria-hidden","true"); const anyOpen = menuDrawer.classList.contains("is-open") || cart.classList.contains("is-open") || searchModal.classList.contains("is-open") || qv.classList.contains("is-open"); if(!anyOpen){ backdrop.hidden = true; document.body.style.overflow = ""; } }
+function syncRangeUI(){ let minVal = Number(pMin.value), maxVal = Number(pMax.value); if(minVal>maxVal){ const tmp=minVal; minVal=maxVal; maxVal=tmp; pMin.value=String(minVal); pMax.value=String(maxVal);} const lo=Number(pMin.min), hi=Number(pMin.max), span=hi-lo||1; const pLo=((minVal-lo)/span)*100, pHi=((maxVal-lo)/span)*100; rangeActive.style.left=`calc(${pLo}% )`; rangeActive.style.width=`calc(${pHi-pLo}% - 0px)`; if(priceLabel) priceLabel.textContent = `${fmt(minVal)} – ${fmt(maxVal)}`; if(priceInputMin && document.activeElement!==priceInputMin) priceInputMin.value=String(Math.round(minVal)); if(priceInputMax && document.activeElement!==priceInputMax) priceInputMax.value=String(Math.round(maxVal)); }
+function commitPriceFromInputs(source){ if(!priceInputMin || !priceInputMax) return; const hi=Number(pMax.max)||1000; let minVal=priceInputMin.value.trim()===""?0:Math.round(Number(priceInputMin.value)); let maxVal=priceInputMax.value.trim()===""?hi:Math.round(Number(priceInputMax.value)); if(!Number.isFinite(minVal)) minVal=0; if(!Number.isFinite(maxVal)) maxVal=hi; minVal=Math.max(0,Math.min(hi,minVal)); maxVal=Math.max(0,Math.min(hi,maxVal)); if(minVal>maxVal){ if(source==="min") maxVal=minVal; else minVal=maxVal; } pMin.value=String(minVal); pMax.value=String(maxVal); priceInputMin.value=String(minVal); priceInputMax.value=String(maxVal); syncRangeUI(); applyFilters(); }
+const selectedSizes = () => new Set([...sizeFilter].filter(Boolean));
+function parsePreviewImages(data,image){ const raw=data.images??data.gallery??data.photos??data.imageUrls??data.productImages; const mainImage=String(image||"").trim(); const preview=[]; const push=(entry)=>{ if(!entry) return; if(typeof entry==="string"){ const url=entry.trim(); if(url) preview.push({url,colorName:"",colorHex:""}); return; } if(typeof entry==="object"){ const url=String(entry.url||entry.image||entry.src||entry.imageUrl||"").trim(); if(!url) return; preview.push({url,colorName:String(entry.colorName||entry.color||entry.name||"").trim(),colorHex:String(entry.colorHex||entry.hex||entry.code||"").trim()}); } }; if(Array.isArray(raw)) raw.forEach(push); else if(typeof raw==="string") raw.split(",").map((p)=>p.trim()).filter(Boolean).forEach((u)=>push(u)); if(mainImage && !preview.some((p)=>p.url===mainImage)) preview.unshift({url:mainImage,colorName:"",colorHex:""}); if(!preview.length && mainImage) preview.push({url:mainImage,colorName:"",colorHex:""}); return preview; }
+function parseColorOptions(data,previewImages){ const rawColors=data.colors??data.colorOptions??data.variants??data.colorVariant; const colors=[]; const toEntry=(entry,index,fallbackName="Color")=>{ if(!entry) return null; if(typeof entry==="string") return {id:`color-${index}`,name:entry.trim(),hex:"",imageIndex:-1}; if(typeof entry==="object"){ const name=String(entry.name||entry.color||entry.label||fallbackName).trim(); const hex=String(entry.hex||entry.colorHex||entry.code||"").trim(); const imageIndex=Number.isInteger(entry.imageIndex)?entry.imageIndex:-1; return {id:`color-${index}`,name,hex,imageIndex}; } return null; }; if(Array.isArray(rawColors)){ rawColors.forEach((entry,index)=>{ const c=toEntry(entry,index,"Color"); if(c&&c.name) colors.push(c); }); } else if(typeof rawColors==="object" && rawColors!==null){ Object.entries(rawColors).forEach(([key,value],index)=>{ const c=toEntry(value,index,key); if(c){ if(!c.name) c.name=key; colors.push(c);} }); } else if(typeof rawColors==="string"){ rawColors.split(",").map((i)=>i.trim()).filter(Boolean).forEach((name,index)=>colors.push({id:`color-${index}`,name,hex:"",imageIndex:-1})); } if(!colors.length){ const seen=new Set(); previewImages.forEach((entry,index)=>{ const colorName=String(entry.colorName||"").trim(); const colorHex=String(entry.colorHex||"").trim(); if(!colorName && !colorHex) return; const key=`${colorName||"color"}|${colorHex}`; if(seen.has(key)) return; seen.add(key); colors.push({id:`color-${colors.length}`,name:colorName||"Color",hex:colorHex,imageIndex:index}); }); } return colors; }
+function parseProduct(doc){ const data=doc.data(); const image=data.image||data.imageUrl||data.img||data.photo||data.thumbnail||""; const name=data.name||data.title||data.productName||""; const category=data.category||data.type||"Général"; const price=Number(data.price ?? data.amount ?? data.cost); const description=data.description||data.details||data.desc||""; const promoBadge=data.remise||data.promotion||data.promo||data.badge||data.tag||""; const previewImages=parsePreviewImages(data,image); const colors=parseColorOptions(data,previewImages); let sizes=data.sizes||data.size||[]; if(typeof sizes==="string") sizes=sizes.split(",").map((s)=>s.trim()); if(!Array.isArray(sizes)) sizes=[String(sizes)]; sizes=sizes.filter(Boolean).map((s)=>String(s).toUpperCase()); return {id:doc.id,name:String(name||"").trim(),category:String(category||"").trim(),price,image:String(image||"").trim(),promoBadge:String(promoBadge||"").trim(),description:String(description||"").trim(),previewImages,images:previewImages.map((p)=>p.url).filter(Boolean),colors,sizes}; }
+async function getProductsFromPossibleCollections(){ for(const colName of PRODUCTS_COLLECTION_CANDIDATES){ const snapshot=await getDocs(collection(db,colName)); if(!snapshot.empty) return snapshot.docs.map(parseProduct);} const fallbackSnapshot=await getDocs(collection(db,PRODUCTS_COLLECTION_CANDIDATES[0])); return fallbackSnapshot.docs.map(parseProduct); }
+function renderSizes(){ const sizes=[...new Set(allProducts.flatMap((p)=>p.sizes||[]))].sort((a,b)=>a.localeCompare(b,undefined,{numeric:true})); if(!sizes.length){ sizesWrap.innerHTML=""; return; } sizesWrap.innerHTML=sizes.map((s)=>`<button class="size-chip ${sizeFilter.has(s)?"is-on":""}" data-size="${escapeHtml(s)}" type="button">${escapeHtml(s)}</button>`).join(""); }
+function applyFilters(){ const term=qInput.value.trim().toLowerCase(); const cat=catSelect.value; const minP=Math.min(Number(pMin.value),Number(pMax.value)); const maxP=Math.max(Number(pMin.value),Number(pMax.value)); const sizes=selectedSizes(); filteredProducts=allProducts.filter((p)=>{ const okCat=cat==="all"||p.category===cat; const okTerm=!term||p.name.toLowerCase().includes(term); const okPrice=p.price>=minP && p.price<=maxP; const okSize=sizes.size===0||[...sizes].some((s)=>(p.sizes||[]).includes(s)); return okCat && okTerm && okPrice && okSize; }); renderGrid(); }
+function renderGrid(){ countEl.textContent=`${filteredProducts.length} produit${filteredProducts.length>1?"s":""}`; if(!filteredProducts.length){ grid.innerHTML=""; empty.hidden=false; return; } empty.hidden=true; grid.innerHTML=filteredProducts.map((p)=>{ const discountRate=extractDiscountRate(p.promoBadge); const discounted=discountRate?Math.max(0,p.price*(1-discountRate/100)):p.price; const priceHtml=discountRate?`<span class="card__price">${escapeHtml(fmt(discounted))}</span><span class="card__old">${escapeHtml(fmt(p.price))}</span>`:`<span class="card__price">${escapeHtml(fmt(p.price))}</span>`; const badgeHtml=p.promoBadge?`<span class="badge">${escapeHtml(p.promoBadge)}</span>`:""; const sizes=(p.sizes||[]).slice(0,6).join(", "); return `<article class="card" data-reveal><div class="card__media" role="button" tabindex="0" data-qv="${escapeHtml(p.id)}" aria-label="Aperçu ${escapeHtml(p.name)}">${badgeHtml}<img src="${escapeHtml(p.image)}" alt="${escapeHtml(p.name)}" loading="lazy" /></div><div class="card__body"><div class="card__cat">${escapeHtml(p.category||"Général")}</div><div class="card__name">${escapeHtml(p.name)}</div><div class="card__row">${priceHtml}</div><div class="card__sizes">Tailles: ${escapeHtml(sizes||"N/D")}${(p.sizes||[]).length>6?"…":""}</div><div class="card__actions"><button class="mini-btn mini-btn--solid" data-qv="${escapeHtml(p.id)}" type="button">Aperçu</button><button class="mini-btn" data-add="${escapeHtml(p.id)}" type="button">Ajouter</button></div></div></article>`; }).join(""); bindGridEvents(); observeReveals(); }
+function bindGridEvents(){ grid.querySelectorAll("[data-qv]").forEach((el)=>{ el.addEventListener("click",()=>openQuickView(el.getAttribute("data-qv")||"")); el.addEventListener("keydown",(e)=>{ if(e.key==="Enter"||e.key===" ") openQuickView(el.getAttribute("data-qv")||""); }); }); grid.querySelectorAll("[data-add]").forEach((btn)=>{ btn.addEventListener("click",()=>{ const id=btn.getAttribute("data-add")||""; const prod=allProducts.find((x)=>x.id===id); const size=prod?.sizes?.[0]||""; if(!size){ openQuickView(id); return; } addToCart(id,{size,colorId:prod?.colors?.[0]?.id||"",imageUrl:prod?.image||""}); openLayer(cart); }); }); }
+function addToCart(productId,{size="",colorId="",imageUrl=""}={}){ const product=allProducts.find((p)=>p.id===productId); if(!product || !size) return; const color=(product.colors||[]).find((c)=>c.id===colorId)||null; cartState.push({product,size,color,imageUrl:imageUrl||product.image}); renderCart(); }
+function removeFromCart(index){ cartState.splice(index,1); renderCart(); }
+function renderCart(){ cartCount.textContent=String(cartState.length); if(!cartState.length){ cartItems.innerHTML=`<p class="muted">Votre panier est vide.</p>`; cartTotal.textContent=fmt(0); return; } cartItems.innerHTML=cartState.map((item,idx)=>`<div class="cart-item"><img src="${escapeHtml(item.imageUrl)}" alt="${escapeHtml(item.product.name)}" /><div><h4>${escapeHtml(item.product.name)}</h4><div class="price">${escapeHtml(fmt(item.product.price))}</div><div class="meta">Taille: ${escapeHtml(item.size)} • Couleur: ${escapeHtml(item.color?.name||"N/S")}</div></div><button class="remove" data-remove="${idx}" type="button">Retirer</button></div>`).join(""); cartTotal.textContent=fmt(cartState.reduce((sum,item)=>sum+(Number(item.product.price)||0),0)); cartItems.querySelectorAll("[data-remove]").forEach((btn)=>btn.addEventListener("click",()=>removeFromCart(Number(btn.getAttribute("data-remove"))))); }
+function buildCheckoutMessageText(){ if(!cartState.length) return ""; const firstImageUrl=cartState[0]?.imageUrl?String(cartState[0].imageUrl).trim():""; const lines=cartState.map((item,i)=>[`$${i+1}`.replace("$","") + `. ${item.product.name}`,`Couleur: ${item.color?.name || "Couleur non spécifiée"}`,`Taille: ${item.size || "Taille non spécifiée"}`,`Prix: ${fmt(item.product.price)}`].join("\n")); const total=cartState.reduce((sum,item)=>sum+(Number(item.product.price)||0),0); return (firstImageUrl?firstImageUrl+"\n\n":"") + "Bonjour EAGLE STORE, je souhaite commander ces articles :\n\n" + lines.join("\n\n") + `\n\nTotal: ${fmt(total)}`; }
+async function fetchProducts(){ loader.hidden=false; try{ allProducts=(await getProductsFromPossibleCollections()).filter((p)=>p.name&&p.image&&Number.isFinite(p.price)&&p.category); statProductsEl.textContent=`${allProducts.length}+`; const categories=[...new Set(allProducts.map((p)=>p.category))].sort((a,b)=>a.localeCompare(b)); catSelect.innerHTML=`<option value="all">Toutes</option>`+categories.map((c)=>`<option value="${escapeHtml(c)}">${escapeHtml(c)}</option>`).join(""); const hi=allProducts.length?Math.max(...allProducts.map((p)=>p.price),100):100; const ceil=Math.ceil(hi); pMin.min="0"; pMax.min="0"; pMin.max=String(ceil); pMax.max=String(ceil); pMin.value="0"; pMax.value=String(ceil); if(priceInputMin){ priceInputMin.min="0"; priceInputMin.max=String(ceil); priceInputMin.value="0"; } if(priceInputMax){ priceInputMax.min="0"; priceInputMax.max=String(ceil); priceInputMax.value=String(ceil); } syncRangeUI(); renderSizes(); applyFilters(); setupHero(); } catch(e){ console.error("Firestore fetch error:",e); grid.innerHTML=`<div class="empty">Impossible de charger les produits depuis Firestore. Vérifiez la console.</div>`; } finally{ loader.hidden=true; } }
+function setupHero(){ heroImages=[...new Set(allProducts.flatMap((p)=>(p.images?.length?p.images:[p.image])).filter(Boolean))]; if(!heroImages.length) return; heroIndex=0; heroImage.classList.remove("is-ready"); heroImage.onload=()=>{ heroImage.classList.add("is-ready"); heroImage.onload=null; }; heroImage.src=heroImages[0]; const thumbs=heroImages.slice(0,10); heroRail.innerHTML=thumbs.map((src,idx)=>`<button class="thumb ${idx===0?"is-active":""}" data-hero="${idx}" type="button" aria-label="Vedette ${idx + 1}"><img src="${escapeHtml(src)}" alt="" loading="lazy" /></button>`).join(""); heroRail.querySelectorAll("[data-hero]").forEach((btn)=>btn.addEventListener("click",()=>gotoHero(Number(btn.getAttribute("data-hero"))))); const kick=()=>{ if(heroTimer) clearInterval(heroTimer); if(heroImages.length<2) return; heroTimer=setInterval(()=>gotoHero(heroIndex+1),5200); }; kick(); heroPrev.addEventListener("click",()=>{ gotoHero(heroIndex-1); kick(); }); heroNext.addEventListener("click",()=>{ gotoHero(heroIndex+1); kick(); }); }
+function gotoHero(nextIndex){ if(!heroImages.length) return; const max=heroImages.length; heroIndex=(nextIndex%max+max)%max; const nextSrc=heroImages[heroIndex]; heroImage.classList.add("is-switching"); setTimeout(()=>{ heroImage.onload=()=>{ heroImage.classList.remove("is-switching"); heroImage.classList.add("is-ready"); heroImage.onload=null; }; heroImage.src=nextSrc; heroRail.querySelectorAll(".thumb").forEach((t,i)=>t.classList.toggle("is-active",i===heroIndex)); },220); }
+function openQuickView(productId){ const product=allProducts.find((p)=>p.id===productId); if(!product) return; qvProduct=product; qvSelectedSize=product.sizes?.[0]||""; qvSelectedColorId=product.colors?.[0]?.id||""; qvImages=(product.previewImages?.length?product.previewImages:(product.images||[]).map((url)=>({url,colorName:"",colorHex:""}))).filter((x)=>x?.url); qvActiveImage=product.image||qvImages[0]?.url||""; qvTitle.textContent=product.name; qvCategory.textContent=product.category; qvPrice.textContent=fmt(product.price); qvDesc.textContent=product.description||"Aucune description disponible."; renderQVThumbs(); renderQVColors(); renderQVSizes(); updateQVSummary(); openModal(qv); }
+function renderQVThumbs(){ qvThumbs.innerHTML=qvImages.slice(0,12).map((img,idx)=>`<button class="qv-thumb ${img.url===qvActiveImage?"is-active":""}" data-qv-img="${idx}" type="button" aria-label="Miniature ${idx + 1}"><img src="${escapeHtml(img.url)}" alt="" loading="lazy" /></button>`).join(""); qvMain.src=qvActiveImage; qvThumbs.querySelectorAll("[data-qv-img]").forEach((btn)=>btn.addEventListener("click",()=>{ const idx=Number(btn.getAttribute("data-qv-img")); const url=qvImages[idx]?.url; if(!url) return; qvActiveImage=url; renderQVThumbs(); })); }
+function renderQVColors(){ if(!qvProduct) return; const colors=qvProduct.colors||[]; if(!colors.length){ qvColors.innerHTML=`<span class="muted">Aucune couleur</span>`; return; } qvColors.innerHTML=colors.map((c)=>`<button class="swatch ${c.id===qvSelectedColorId?"is-on":""}" data-qv-color="${escapeHtml(c.id)}" type="button" style="background:${escapeHtml(colorToCss(c))}" title="${escapeHtml(c.name)}" aria-label="${escapeHtml(c.name)}"></button>`).join(""); qvColors.querySelectorAll("[data-qv-color]").forEach((btn)=>btn.addEventListener("click",()=>{ if(!qvProduct) return; const id=btn.getAttribute("data-qv-color")||""; qvSelectedColorId=id; const selected=(qvProduct.colors||[]).find((x)=>x.id===id); const target=Number.isInteger(selected?.imageIndex)&&selected.imageIndex>=0?qvImages[selected.imageIndex]?.url:""; if(target) qvActiveImage=target; renderQVColors(); renderQVThumbs(); updateQVSummary(); })); }
+function renderQVSizes(){ if(!qvProduct) return; const sizes=[...new Set(qvProduct.sizes||[])].filter(Boolean); if(!sizes.length){ qvSizes.innerHTML=`<span class="muted">Aucune taille</span>`; qvSelectedSize=""; qvAdd.disabled=true; return; } if(!qvSelectedSize) qvSelectedSize=sizes[0]; qvSizes.innerHTML=sizes.map((s)=>`<button class="chip-btn ${s===qvSelectedSize?"is-on":""}" data-qv-size="${escapeHtml(s)}" type="button">${escapeHtml(s)}</button>`).join(""); qvSizes.querySelectorAll("[data-qv-size]").forEach((btn)=>btn.addEventListener("click",()=>{ qvSelectedSize=btn.getAttribute("data-qv-size")||""; renderQVSizes(); updateQVSummary(); })); qvAdd.disabled=!qvSelectedSize; }
+function updateQVSummary(){ if(!qvProduct) return; const color=(qvProduct.colors||[]).find((c)=>c.id===qvSelectedColorId); qvSummary.textContent=`Sélection: ${color?.name || "Couleur non spécifiée"} • ${qvSelectedSize || "Taille non sélectionnée"}`; qvAdd.disabled=!qvSelectedSize; }
+function observeReveals(){ const els=document.querySelectorAll("[data-reveal]:not(.is-in)"); if(!els.length) return; const obs=new IntersectionObserver((entries)=>{ entries.forEach((e)=>{ if(!e.isIntersecting) return; e.target.classList.add("is-in"); obs.unobserve(e.target); }); },{threshold:.14}); els.forEach((el)=>obs.observe(el)); }
+openMenuBtn.addEventListener("click",()=>openLayer(menuDrawer)); closeMenuBtn.addEventListener("click",()=>closeLayer(menuDrawer)); menuDrawer.addEventListener("click",(e)=>{ const a=e.target.closest("[data-close-drawer]"); if(a) closeLayer(menuDrawer); });
+openCartBtn.addEventListener("click",()=>openLayer(cart)); closeCartBtn.addEventListener("click",()=>closeLayer(cart));
+openSearchBtn.addEventListener("click",()=>{ openModal(searchModal); searchModalInput.value=qInput.value; setTimeout(()=>searchModalInput.focus(),50); });
+closeSearchBtn.addEventListener("click",()=>closeModal(searchModal)); focusCatalogueBtn.addEventListener("click",()=>{ closeModal(searchModal); document.querySelector("#catalogue")?.scrollIntoView({behavior:"smooth"}); setTimeout(()=>qInput.focus(),300); });
+clearSearchBtn.addEventListener("click",()=>{ qInput.value=""; searchModalInput.value=""; applyFilters(); }); searchModalInput.addEventListener("input",()=>{ qInput.value=searchModalInput.value; applyFilters(); });
+backdrop.addEventListener("click",()=>{ closeLayer(menuDrawer); closeLayer(cart); closeModal(searchModal); closeModal(qv); });
+document.addEventListener("keydown",(e)=>{ if(e.key!=="Escape") return; closeLayer(menuDrawer); closeLayer(cart); closeModal(searchModal); closeModal(qv); });
+qInput.addEventListener("input",applyFilters); catSelect.addEventListener("change",applyFilters); pMin.addEventListener("input",()=>{ syncRangeUI(); applyFilters(); }); pMax.addEventListener("input",()=>{ syncRangeUI(); applyFilters(); });
+if(priceInputMin && priceInputMax){ priceInputMin.addEventListener("input",()=>{ if(priceInputMin.value!=="" && priceInputMax.value!=="") commitPriceFromInputs("min"); }); priceInputMax.addEventListener("input",()=>{ if(priceInputMin.value!=="" && priceInputMax.value!=="") commitPriceFromInputs("max"); }); priceInputMin.addEventListener("change",()=>commitPriceFromInputs("min")); priceInputMax.addEventListener("change",()=>commitPriceFromInputs("max")); priceInputMin.addEventListener("blur",()=>commitPriceFromInputs("min")); priceInputMax.addEventListener("blur",()=>commitPriceFromInputs("max")); }
+resetBtn.addEventListener("click",()=>{ qInput.value=""; catSelect.value="all"; sizeFilter=new Set(); pMin.value="0"; pMax.value=String(pMax.max||1000); if(priceInputMin) priceInputMin.value="0"; if(priceInputMax) priceInputMax.value=String(pMax.max||1000); syncRangeUI(); renderSizes(); applyFilters(); });
+sizesWrap.addEventListener("click",(e)=>{ const btn=e.target.closest("[data-size]"); if(!btn) return; const s=btn.getAttribute("data-size"); if(!s) return; if(sizeFilter.has(s)) sizeFilter.delete(s); else sizeFilter.add(s); renderSizes(); applyFilters(); });
+closeQV.addEventListener("click",()=>closeModal(qv)); qvAdd.addEventListener("click",()=>{ if(!qvProduct || !qvSelectedSize) return; addToCart(qvProduct.id,{size:qvSelectedSize,colorId:qvSelectedColorId,imageUrl:qvMain.src || qvActiveImage || qvProduct.image}); closeModal(qv); openLayer(cart); });
+checkoutWA.addEventListener("click",()=>{ const msg=buildCheckoutMessageText(); if(!msg){ alert("Votre panier est vide."); return; } window.open(`https://wa.me/${WHATSAPP_NUMBER}?text=${encodeURIComponent(msg)}`,"_blank"); });
+checkoutCall.addEventListener("click",()=>{ if(!cartState.length){ alert("Votre panier est vide."); return; } window.location.href=`tel:${PHONE_NUMBER}`; });
+function hydrateContactLinks(){ waLink.href=`https://wa.me/${WHATSAPP_NUMBER}`; callLink.href=`tel:${PHONE_NUMBER}`; }
+yearEl.textContent=String(new Date().getFullYear()); hydrateContactLinks(); syncRangeUI(); observeReveals(); renderCart(); fetchProducts();
+  </script>
+</body>
+</html>
